@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lokalizacja i Marsa Alam — Azure Sands Residences</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏖️</text></svg>" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar solid" id="navbar">
+    <a href="index.html" class="nav-logo">
+      <span class="brand">Azure Sands</span>
+      <span class="tagline" data-i18n="nav.tagline">Marsa Alam · Egipt</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" data-i18n="nav.home">Strona główna</a></li>
+      <li><a href="units.html" data-i18n="nav.units">Lokale</a></li>
+      <li><a href="index.html#amenities" data-i18n="nav.amenities">Udogodnienia</a></li>
+      <li><a href="location.html" class="active" data-i18n="nav.location">Lokalizacja</a></li>
+      <li><a href="contact.html" class="nav-cta" data-i18n="nav.cta">Zapytaj teraz</a></li>
+    </ul>
+    <div class="lang-switcher" id="langSwitcher">
+      <button class="lang-btn" onclick="toggleLangMenu()">
+        <span class="lang-flag" id="langFlag">🇵🇱</span>
+        <span class="lang-code" id="langCode">PL</span>
+        <span class="lang-chevron">▾</span>
+      </button>
+      <ul class="lang-menu" id="langMenu">
+        <li data-lang="pl" onclick="setLanguage('pl')"><span>🇵🇱</span> Polski</li>
+        <li data-lang="en" onclick="setLanguage('en')"><span>🇬🇧</span> English</li>
+        <li data-lang="de" onclick="setLanguage('de')"><span>🇩🇪</span> Deutsch</li>
+        <li data-lang="it" onclick="setLanguage('it')"><span>🇮🇹</span> Italiano</li>
+        <li data-lang="fr" onclick="setLanguage('fr')"><span>🇫🇷</span> Français</li>
+        <li data-lang="es" onclick="setLanguage('es')"><span>🇪🇸</span> Español</li>
+      </ul>
+    </div>
+    <div class="nav-hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1553913861-c0fddf2619ee?w=1400&q=80')"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content">
+      <div class="breadcrumb">
+        <a href="index.html" data-i18n="bread.home">Strona główna</a>
+        <span>/</span>
+        <span style="color:rgba(255,255,255,0.85)" data-i18n="bread.location">Lokalizacja</span>
+      </div>
+      <h1 data-i18n="loc.hero.title">Marsa Alam, Egipt</h1>
+      <p data-i18n="loc.hero.desc">Odkryj jedno z najpiękniejszych i najdzikszych nadmorskich miejsc świata — Twój nowy dom na Riwierze Morza Czerwonego.</p>
+    </div>
+  </div>
+
+  <!-- MAP SECTION -->
+  <section class="map-section">
+    <div class="container">
+      <div class="section-label" data-i18n="map.label">Gdzie jesteśmy</div>
+      <h2 class="section-title" data-i18n="map.title">Znajdź Azure Sands Residences</h2>
+      <div class="divider"></div>
+      <p class="section-sub" data-i18n="map.sub">Zlokalizowany w sercu Marsa Alam, zaledwie 500 metrów od brzegu Morza Czerwonego i kilka minut od międzynarodowego lotniska.</p>
+
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56329.22386049893!2d34.85786!3d25.06452!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15a1e71b3c5a3d85%3A0x1c5c5e1db8e7f0c!2sMarsa%20Alam%2C%20Red%20Sea%20Governorate%2C%20Egypt!5e0!3m2!1spl!2spl!4v1712000000000"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          data-i18n-title="map.iframe" title="Mapa Marsa Alam"
+        ></iframe>
+        <div class="map-overlay-info">
+          <h4>Azure Sands Residences</h4>
+          <p data-i18n-html="map.overlay">Centrum Marsa Alam<br />Gubernatorstwo Morza Czerwonego, Egipt</p>
+          <div class="coord">25.0645° N, 34.8579° E</div>
+        </div>
+      </div>
+
+      <!-- DISTANCES -->
+      <div class="distances-grid">
+        <div class="distance-card"><div class="distance-icon">✈️</div><h4 data-i18n="dist.1.title">Lotnisko Marsa Alam</h4><div class="km">67 km</div><div class="desc" data-i18n="dist.1.desc">~45 min samochodem</div></div>
+        <div class="distance-card"><div class="distance-icon">🏖️</div><h4 data-i18n="dist.2.title">Plaża Morza Czerwonego</h4><div class="km">500 m</div><div class="desc" data-i18n="dist.2.desc">~6 min pieszo</div></div>
+        <div class="distance-card"><div class="distance-icon">🐠</div><h4 data-i18n="dist.3.title">Rafa Elphinstone</h4><div class="km">12 km</div><div class="desc" data-i18n="dist.3.desc">Nurkowanie światowej klasy</div></div>
+        <div class="distance-card"><div class="distance-icon">🏙️</div><h4 data-i18n="dist.4.title">Hurghada</h4><div class="km">220 km</div><div class="desc" data-i18n="dist.4.desc">~2,5 godz. samochodem</div></div>
+        <div class="distance-card"><div class="distance-icon">🏥</div><h4 data-i18n="dist.5.title">Szpital</h4><div class="km">3 km</div><div class="desc" data-i18n="dist.5.desc">Szpital Ogólny Marsa Alam</div></div>
+        <div class="distance-card"><div class="distance-icon">🛒</div><h4 data-i18n="dist.6.title">Centrum handlowe</h4><div class="km">1,2 km</div><div class="desc" data-i18n="dist.6.desc">~15 min pieszo</div></div>
+        <div class="distance-card"><div class="distance-icon">🐢</div><h4 data-i18n="dist.7.title">Plaża żółwi morskich</h4><div class="km">7 km</div><div class="desc" data-i18n="dist.7.desc">Rezerwat Wadi El Gemal</div></div>
+        <div class="distance-card"><div class="distance-icon">⛽</div><h4 data-i18n="dist.8.title">Marsa Nakari</h4><div class="km">18 km</div><div class="desc" data-i18n="dist.8.desc">Dziewicza, ustronna zatoka</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT THE CITY -->
+  <section class="city-section">
+    <div class="container">
+      <div class="city-grid">
+        <div class="city-text">
+          <div class="section-label" data-i18n="city.label">O mieście</div>
+          <h2 class="section-title" data-i18n="city.title">Marsa Alam — Ukryty klejnot Egiptu</h2>
+          <div class="divider"></div>
+          <p style="color:var(--gray);font-size:0.95rem;line-height:1.85;margin-bottom:16px;" data-i18n="city.para1">Marsa Alam to dynamicznie rozwijające się miasto nadmorskie położone wzdłuż południowego wybrzeża Morza Czerwonego w Egipcie. Niegdyś spokojna wioska rybacka, przekształciła się w jedno z najbardziej pożądanych miejsc regionu — znane z nurkowania, snorkelingu i ekoturystyki — zachowując przy tym swój dziki i autentyczny charakter.</p>
+          <p style="color:var(--gray);font-size:0.95rem;line-height:1.85;margin-bottom:16px;" data-i18n="city.para2">Miasto stanowi bramę do jednych z najbardziej bioróżnorodnych środowisk morskich na świecie. Jego wody zamieszkują dugongi, płaszczki, delfiny, żółwie morskie i tętniące życiem ogrody koralowe rozciągające się wzdłuż setek kilometrów dziewiczego wybrzeża. Pobliski Park Narodowy Wadi El Gemal chroni zarówno morskie, jak i pustynne ekosystemy regionu.</p>
+          <p style="color:var(--gray);font-size:0.95rem;line-height:1.85;" data-i18n="city.para3">Otwarcie Międzynarodowego Lotniska Marsa Alam oraz ciągłe inwestycje rządowe w infrastrukturę turystyczną napędzają silny wzrost miasta — co czyni je wyjątkową szansą inwestycyjną, a zarazem niezrównanym miejscem do życia.</p>
+
+          <div class="city-highlights">
+            <div class="highlight-card"><h4 data-i18n="city.h1.title">🤿 Nurkowanie światowej klasy</h4><p data-i18n="city.h1.desc">Rafy Elphinstone, Daedalus i St. John's — w czołówce 10 najlepszych miejsc nurkowania na Ziemi.</p></div>
+            <div class="highlight-card"><h4 data-i18n="city.h2.title">🐢 Sanktuarium dzikich zwierząt</h4><p data-i18n="city.h2.desc">Park Narodowy Wadi El Gemal chroni zagrożone żółwie szylkretowe i dugongi.</p></div>
+            <div class="highlight-card"><h4 data-i18n="city.h3.title">🌅 Słońce przez cały rok</h4><p data-i18n="city.h3.desc">Ponad 300 słonecznych dni w roku, minimalne opady i ciepła woda morska.</p></div>
+            <div class="highlight-card"><h4 data-i18n="city.h4.title">🏗️ Rosnące inwestycje</h4><p data-i18n="city.h4.desc">Duże inwestycje rządowe i prywatne dynamicznie rozwijają infrastrukturę miasta.</p></div>
+          </div>
+        </div>
+
+        <div class="city-imgs">
+          <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=700&q=80" alt="Rafa koralowa Morza Czerwonego" />
+          <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&q=80" alt="Krajobraz pustynny" />
+          <img src="https://images.unsplash.com/photo-1504214208698-ea1916a2195a?w=500&q=80" alt="Wybrzeże Egiptu" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLIMATE SECTION -->
+  <section class="climate-section">
+    <div class="container">
+      <div style="text-align:center;max-width:600px;margin:0 auto;">
+        <div class="section-label" data-i18n="clim.label">Klimat</div>
+        <h2 class="section-title" data-i18n="clim.title">Słońce niemal każdego dnia</h2>
+        <div class="divider" style="margin:20px auto;"></div>
+        <p class="section-sub" style="margin:0 auto;" data-i18n="clim.sub">Marsa Alam cieszy się ciepłym, pustynnym klimatem z ponad 300 słonecznymi dniami w roku. Morze Czerwone nadaje się do kąpieli przez cały rok, a temperatura wody wynosi od 22°C do 30°C.</p>
+      </div>
+      <div class="climate-grid">
+        <div class="climate-card"><div class="icon">❄️</div><div class="month" data-i18n="clim.1.month">Sty – Lut</div><div class="temp">24<sup>°C</sup></div><div class="desc" data-i18n="clim.1.desc">Łagodnie, idealne do zwiedzania</div></div>
+        <div class="climate-card"><div class="icon">🌸</div><div class="month" data-i18n="clim.2.month">Mar – Maj</div><div class="temp">29<sup>°C</sup></div><div class="desc" data-i18n="clim.2.desc">Ciepło z łagodną bryzą</div></div>
+        <div class="climate-card"><div class="icon">☀️</div><div class="month" data-i18n="clim.3.month">Cze – Wrz</div><div class="temp">37<sup>°C</sup></div><div class="desc" data-i18n="clim.3.desc">Gorąco i słonecznie — sezon szczytowy</div></div>
+        <div class="climate-card"><div class="icon">🍂</div><div class="month" data-i18n="clim.4.month">Paź – Gru</div><div class="temp">28<sup>°C</sup></div><div class="desc" data-i18n="clim.4.desc">Idealne do nurkowania i snorkelingu</div></div>
+      </div>
+
+      <!-- Sea temp bar -->
+      <div style="margin-top:48px;background:var(--light);border-radius:12px;padding:36px 40px;border:1px solid var(--light-gray);">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;flex-wrap:wrap;gap:12px;">
+          <h4 style="font-size:1.1rem;" data-i18n="seatemp.title">Temperatura wody Morza Czerwonego</h4>
+          <span style="font-size:0.8rem;color:var(--gray);" data-i18n="seatemp.sub">Przez cały rok przyjemna do pływania · 22–30°C</span>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(12,1fr);gap:6px;">
+          <div style="text-align:center;"><div style="height:60px;background:var(--light-gray);border-radius:4px 4px 0 0;position:relative;overflow:hidden;"><div style="position:absolute;bottom:0;left:0;right:0;height:73%;background:var(--primary);border-radius:4px 4px 0 0;"></div></div><div style="font-size:0.65rem;color:var(--gray);margin-top:4px;" data-month-idx="0">S</div><div style="font-size:0.72rem;font-weight:600;color:var(--primary);">22°</div></div>
+          <div style="text-align:center;"><div style="height:60px;background:var(--light-gray);border-radius:4px 4px 0 0;position:relative;overflow:hidden;"><div style="position:absolute;bottom:0;left:0;right:0;height:73%;background:var(--primary);border-radius:4px 4px 0 0;"></div></div><div style="font-size:0.65rem;color:var(--gray);margin-top:4px;" data-month-idx="1">L</div><div style="font-size:0.72rem;font-weight:600;color:var(--primary);">22°</div></div>
+          <div style="text-align:center;"><div style="height:60px;background:var(--light-gray);border-radius:4px 4px 0 0;position:relative;overflow:hidden;"><div style="position:absolute;bottom:0;left:0;right:0;height:77%;background:var(--primary);border-radius:4px 4px 0 0;"></div></div><div style="font-size:0.65rem;color:var(--gray);margin-top:4px;" data-month-idx="2">M</div><div style="font-size:0.72rem;font-weight:600;color:var(--primary);">23°</div></div>
+          <div style="text-align:center;"><div style="height:60px;background:var(--light-gray);border-radius:4px 4px 0 0;position:relative;overflow:hidden;"><div style="position:absolute;bottom:0;left:0;right:0;height:83%;background:var(--primary);border-radius:4px 4px 0 0;"></div></div><div style="font-size:0.65rem;color:var(--gray);margin-top:4px;" data-month-idx="3">K</div><div style="font-size:0.72rem;font-weight:600;color:var(--primary);">25°</div></div>
+          <div style="text-align:center;"><div style="height:60px;background:var(--light-gray);border-radius:4px 4px 0 0;position:relative;overflow:hidden;"><div style="position:absolute;bottom:0;left:0;right:0;height:87%;background:var(--primary);border-radius:4px 4px 0 0;"></div></div><div style="font-size:0.65rem;color:var(--gray);margin-top:4px;" data-month-idx="4">M</div><div style="font-size:0.72rem;font-weight:600;color:var(--primary);">26°</div></div>
+          <div style="text-align:center;"><div style="height:60px;background:var(--light-gray);border-radius:4px 4px 0 0;position:relative;overflow:hidden;"><div style="position:absolute;bottom:0;left:0;right:0;height:90%;background:#0a6e8a;border-radius:4px 4px 0 0;"></div></div><div style="font-size:0.65rem;color:var(--gray);margin-top:4px;" data-month-idx="5">C</div><div style="font-size:0.72rem;font-weight:600;color:var(--primary);">27°</div></div>
+          <div style="text-align:center;"><div style="height:60px;background:var(--light-gray);border-radius:4px 4px 0 0;position:relative;overflow:hidden;"><div style="position:absolute;bottom:0;left:0;right:0;height:93%;background:#0a6e8a;border-radius:4px 4px 0 0;"></div></div><div style="font-size:0.65rem;color:var(--gray);margin-top:4px;" data-month-idx="6">L</div><div style="font-size:0.72rem;font-weight:600;color:var(--primary);">28°</div></div>
+          <div style="text-align:center;"><div style="height:60px;background:var(--light-gray);border-radius:4px 4px 0 0;position:relative;overflow:hidden;"><div style="position:absolute;bottom:0;left:0;right:0;height:100%;background:#064f65;border-radius:4px 4px 0 0;"></div></div><div style="font-size:0.65rem;color:var(--gray);margin-top:4px;" data-month-idx="7">S</div><div style="font-size:0.72rem;font-weight:600;color:var(--primary);">30°</div></div>
+          <div style="text-align:center;"><div style="height:60px;background:var(--light-gray);border-radius:4px 4px 0 0;position:relative;overflow:hidden;"><div style="position:absolute;bottom:0;left:0;right:0;height:93%;background:#0a6e8a;border-radius:4px 4px 0 0;"></div></div><div style="font-size:0.65rem;color:var(--gray);margin-top:4px;" data-month-idx="8">W</div><div style="font-size:0.72rem;font-weight:600;color:var(--primary);">28°</div></div>
+          <div style="text-align:center;"><div style="height:60px;background:var(--light-gray);border-radius:4px 4px 0 0;position:relative;overflow:hidden;"><div style="position:absolute;bottom:0;left:0;right:0;height:87%;background:var(--primary);border-radius:4px 4px 0 0;"></div></div><div style="font-size:0.65rem;color:var(--gray);margin-top:4px;" data-month-idx="9">P</div><div style="font-size:0.72rem;font-weight:600;color:var(--primary);">26°</div></div>
+          <div style="text-align:center;"><div style="height:60px;background:var(--light-gray);border-radius:4px 4px 0 0;position:relative;overflow:hidden;"><div style="position:absolute;bottom:0;left:0;right:0;height:80%;background:var(--primary);border-radius:4px 4px 0 0;"></div></div><div style="font-size:0.65rem;color:var(--gray);margin-top:4px;" data-month-idx="10">L</div><div style="font-size:0.72rem;font-weight:600;color:var(--primary);">24°</div></div>
+          <div style="text-align:center;"><div style="height:60px;background:var(--light-gray);border-radius:4px 4px 0 0;position:relative;overflow:hidden;"><div style="position:absolute;bottom:0;left:0;right:0;height:73%;background:var(--primary);border-radius:4px 4px 0 0;"></div></div><div style="font-size:0.65rem;color:var(--gray);margin-top:4px;" data-month-idx="11">G</div><div style="font-size:0.72rem;font-weight:600;color:var(--primary);">22°</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THINGS TO DO -->
+  <section style="background:var(--dark);padding:96px 48px;">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:56px;">
+        <div class="section-label" style="color:var(--secondary)" data-i18n="act.label">Co robić</div>
+        <h2 class="section-title" style="color:#fff" data-i18n="act.title">Twój styl życia czeka</h2>
+        <div class="divider" style="margin:20px auto;"></div>
+        <p class="section-sub" style="color:rgba(255,255,255,0.6);margin:0 auto;" data-i18n="act.sub">Marsa Alam oferuje wyjątkowe połączenie przygody, relaksu i naturalnego piękna — wszystko tuż u Twoich drzwi.</p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+
+        <div style="border-radius:12px;overflow:hidden;position:relative;height:280px;">
+          <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&q=80" alt="Nurkowanie" style="width:100%;height:100%;object-fit:cover;" />
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(9,17,26,0.85) 0%,rgba(9,17,26,0.1) 60%);display:flex;flex-direction:column;justify-content:flex-end;padding:24px;">
+            <div style="font-size:1.6rem;margin-bottom:6px;">🤿</div>
+            <h4 style="color:#fff;font-size:1.1rem;margin-bottom:4px;" data-i18n="act.1.title">Nurkowanie</h4>
+            <p style="color:rgba(255,255,255,0.65);font-size:0.82rem;" data-i18n="act.1.desc">Eksploruj słynne rafy pełne rekinów, płaszczek i tropikalnych ryb</p>
+          </div>
+        </div>
+
+        <div style="border-radius:12px;overflow:hidden;position:relative;height:280px;">
+          <img src="https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?w=600&q=80" alt="Safari pustynne" style="width:100%;height:100%;object-fit:cover;" />
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(9,17,26,0.85) 0%,rgba(9,17,26,0.1) 60%);display:flex;flex-direction:column;justify-content:flex-end;padding:24px;">
+            <div style="font-size:1.6rem;margin-bottom:6px;">🐫</div>
+            <h4 style="color:#fff;font-size:1.1rem;margin-bottom:4px;" data-i18n="act.2.title">Safari pustynne</h4>
+            <p style="color:rgba(255,255,255,0.65);font-size:0.82rem;" data-i18n="act.2.desc">Quady, wycieczki na wielbłądach i obserwacja gwiazd na Pustyni Wschodniej</p>
+          </div>
+        </div>
+
+        <div style="border-radius:12px;overflow:hidden;position:relative;height:280px;">
+          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80" alt="Sporty wodne" style="width:100%;height:100%;object-fit:cover;" />
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(9,17,26,0.85) 0%,rgba(9,17,26,0.1) 60%);display:flex;flex-direction:column;justify-content:flex-end;padding:24px;">
+            <div style="font-size:1.6rem;margin-bottom:6px;">🏄</div>
+            <h4 style="color:#fff;font-size:1.1rem;margin-bottom:4px;" data-i18n="act.3.title">Sporty wodne</h4>
+            <p style="color:rgba(255,255,255,0.65);font-size:0.82rem;" data-i18n="act.3.desc">Kitesurfing, windsurfing, snorkeling i rejsy wzdłuż wybrzeża</p>
+          </div>
+        </div>
+
+        <div style="border-radius:12px;overflow:hidden;position:relative;height:280px;">
+          <img src="https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?w=600&q=80" alt="Delfiny" style="width:100%;height:100%;object-fit:cover;" />
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(9,17,26,0.85) 0%,rgba(9,17,26,0.1) 60%);display:flex;flex-direction:column;justify-content:flex-end;padding:24px;">
+            <div style="font-size:1.6rem;margin-bottom:6px;">🐬</div>
+            <h4 style="color:#fff;font-size:1.1rem;margin-bottom:4px;" data-i18n="act.4.title">Obserwowanie delfinów</h4>
+            <p style="color:rgba(255,255,255,0.65);font-size:0.82rem;" data-i18n="act.4.desc">Pływaj z dzikimi delfinami przy rafie Samadai (Dolphin House)</p>
+          </div>
+        </div>
+
+        <div style="border-radius:12px;overflow:hidden;position:relative;height:280px;">
+          <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80" alt="Restauracje" style="width:100%;height:100%;object-fit:cover;" />
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(9,17,26,0.85) 0%,rgba(9,17,26,0.1) 60%);display:flex;flex-direction:column;justify-content:flex-end;padding:24px;">
+            <div style="font-size:1.6rem;margin-bottom:6px;">🍽️</div>
+            <h4 style="color:#fff;font-size:1.1rem;margin-bottom:4px;" data-i18n="act.5.title">Restauracje i kuchnia</h4>
+            <p style="color:rgba(255,255,255,0.65);font-size:0.82rem;" data-i18n="act.5.desc">Świeże owoce morza, bary na dachu i autentyczne egipskie jadłodajnie</p>
+          </div>
+        </div>
+
+        <div style="border-radius:12px;overflow:hidden;position:relative;height:280px;">
+          <img src="https://images.unsplash.com/photo-1612886195729-a418fc1aac0a?w=600&q=80" alt="Wellness" style="width:100%;height:100%;object-fit:cover;" />
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(9,17,26,0.85) 0%,rgba(9,17,26,0.1) 60%);display:flex;flex-direction:column;justify-content:flex-end;padding:24px;">
+            <div style="font-size:1.6rem;margin-bottom:6px;">🧘</div>
+            <h4 style="color:#fff;font-size:1.1rem;margin-bottom:4px;" data-i18n="act.6.title">Wellness i joga</h4>
+            <p style="color:rgba(255,255,255,0.65);font-size:0.82rem;" data-i18n="act.6.desc">Poranna joga na plaży, retreaty w spa i holistyczne centra zdrowia</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2 data-i18n="cta.loc.title">Gotowy, aby uczynić Marsa Alam swoim domem?</h2>
+      <p data-i18n="cta.loc.desc">Skontaktuj się z naszym zespołem, aby umówić wizytę lub poprosić o pełny pakiet informacyjny.</p>
+      <a href="contact.html" class="btn-primary" style="font-size:1rem;padding:16px 40px;" data-i18n="cta.loc.btn">Zapytaj teraz →</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="brand">Azure Sands Residences</div>
+        <div class="tagline" data-i18n="footer.tagline">Marsa Alam · Egipt</div>
+        <p data-i18n="footer.desc">Ekskluzywna inwestycja mieszkaniowa na Riwierze Morza Czerwonego — gdzie nowoczesny luksus spotyka się z naturalnym pięknem.</p>
+        <div class="social-links">
+          <div class="social-link">f</div><div class="social-link">in</div>
+          <div class="social-link">w</div><div class="social-link">▶</div>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.col1">Szybkie linki</h4>
+        <ul>
+          <li><a href="index.html" data-i18n="nav.home">Strona główna</a></li>
+          <li><a href="units.html" data-i18n="nav.units">Lokale</a></li>
+          <li><a href="index.html#amenities" data-i18n="nav.amenities">Udogodnienia</a></li>
+          <li><a href="location.html" data-i18n="nav.location">Lokalizacja</a></li>
+          <li><a href="contact.html" data-i18n="footer.col3">Kontakt</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.col2">Lokale</h4>
+        <ul>
+          <li><a href="unit-studio.html" data-i18n="footer.studios">Studia</a></li>
+          <li><a href="unit-1bed.html" data-i18n="footer.1bed">1-pokojowe</a></li>
+          <li><a href="unit-2bed.html" data-i18n="footer.2bed">Penthouse'y 2-pokojowe</a></li>
+          <li><a href="units.html" data-i18n="footer.plans">Rzuty pięter</a></li>
+          <li><a href="contact.html" data-i18n="footer.payment">Plany płatności</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.col3">Kontakt</h4>
+        <div class="footer-contact-item"><span class="icon">📍</span><span>Marsa Alam, Gubernatorstwo Morza Czerwonego, Egipt</span></div>
+        <div class="footer-contact-item"><span class="icon">📞</span><span>+20 65 123 4567</span></div>
+        <div class="footer-contact-item"><span class="icon">✉️</span><span>info@azuresands.eg</span></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span data-i18n="footer.copyright">© 2026 Azure Sands Residences. Wszelkie prawa zastrzeżone.</span>
+      <span data-i18n="footer.disclaimer">Ceny mogą ulec zmianie. Obowiązują regulamin i warunki.</span>
+    </div>
+  </footer>
+
+  <script src="translations.js"></script>
+  <script>
+    function toggleMenu() {
+      const links = document.querySelector('.nav-links');
+      const isOpen = links.style.display === 'flex';
+      links.style.display = isOpen ? '' : 'flex';
+      if (!isOpen) {
+        links.style.flexDirection = 'column';
+        links.style.position = 'fixed';
+        links.style.top = '64px';
+        links.style.left = '0';
+        links.style.right = '0';
+        links.style.background = 'rgba(9,17,26,0.97)';
+        links.style.padding = '24px 24px 32px';
+        links.style.gap = '24px';
+        links.style.backdropFilter = 'blur(12px)';
+      }
+    }
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.distance-card, .climate-card, .highlight-card').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(24px)';
+      el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>

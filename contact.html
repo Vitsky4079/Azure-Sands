@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kontakt — Azure Sands Residences</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏖️</text></svg>" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar solid" id="navbar">
+    <a href="index.html" class="nav-logo">
+      <span class="brand">Azure Sands</span>
+      <span class="tagline" data-i18n="nav.tagline">Marsa Alam · Egipt</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" data-i18n="nav.home">Strona główna</a></li>
+      <li><a href="units.html" data-i18n="nav.units">Lokale</a></li>
+      <li><a href="index.html#amenities" data-i18n="nav.amenities">Udogodnienia</a></li>
+      <li><a href="location.html" data-i18n="nav.location">Lokalizacja</a></li>
+      <li><a href="contact.html" class="nav-cta active" data-i18n="nav.cta">Zapytaj teraz</a></li>
+    </ul>
+    <div class="lang-switcher" id="langSwitcher">
+      <button class="lang-btn" onclick="toggleLangMenu()">
+        <span class="lang-flag" id="langFlag">🇵🇱</span>
+        <span class="lang-code" id="langCode">PL</span>
+        <span class="lang-chevron">▾</span>
+      </button>
+      <ul class="lang-menu" id="langMenu">
+        <li data-lang="pl" onclick="setLanguage('pl')"><span>🇵🇱</span> Polski</li>
+        <li data-lang="en" onclick="setLanguage('en')"><span>🇬🇧</span> English</li>
+        <li data-lang="de" onclick="setLanguage('de')"><span>🇩🇪</span> Deutsch</li>
+        <li data-lang="it" onclick="setLanguage('it')"><span>🇮🇹</span> Italiano</li>
+        <li data-lang="fr" onclick="setLanguage('fr')"><span>🇫🇷</span> Français</li>
+        <li data-lang="es" onclick="setLanguage('es')"><span>🇪🇸</span> Español</li>
+      </ul>
+    </div>
+    <div class="nav-hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1400&q=80')"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content">
+      <div class="breadcrumb">
+        <a href="index.html" data-i18n="bread.home">Strona główna</a>
+        <span>/</span>
+        <span style="color:rgba(255,255,255,0.85)" data-i18n="bread.contact">Kontakt</span>
+      </div>
+      <h1 data-i18n="con.hero.title">Skontaktuj się z nami</h1>
+      <p data-i18n="con.hero.desc">Nasz zespół sprzedaży jest gotowy odpowiedzieć na wszelkie pytania i pomóc znaleźć idealny lokal.</p>
+    </div>
+  </div>
+
+  <!-- CONTACT SECTION -->
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- LEFT: Info Card -->
+        <div class="contact-info-card">
+          <h3 data-i18n="con.card.title">Czekamy na Twoją wiadomość</h3>
+          <p data-i18n="con.card.desc">Niezależnie czy szukasz porad inwestycyjnych, rzutów pięter, czy chcesz umówić wizytę na budowie — nasz zespół jest do Twojej dyspozycji.</p>
+
+          <div class="info-item">
+            <div class="info-icon">📍</div>
+            <div>
+              <h4 data-i18n="con.office.title">Biuro sprzedaży</h4>
+              <p data-i18n-html="con.office.text">Centrum Marsa Alam<br />Gubernatorstwo Morza Czerwonego, Egipt<br />Kod pocztowy: 84511</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon">📞</div>
+            <div>
+              <h4 data-i18n="con.phone.title">Telefon i WhatsApp</h4>
+              <p>+20 65 123 4567<br />+20 100 987 6543</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon">✉️</div>
+            <div>
+              <h4 data-i18n="con.email.title">E-mail</h4>
+              <p>info@azuresands.eg<br />sales@azuresands.eg</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon">🕐</div>
+            <div>
+              <h4 data-i18n="con.hours.title">Godziny pracy</h4>
+              <p data-i18n-html="con.hours.text">Niedziela – Czwartek: 9:00 – 18:00<br />Piątek: 10:00 – 14:00<br />Sobota: Zamknięte</p>
+            </div>
+          </div>
+
+          <div style="margin-top:28px; padding-top:28px; border-top:1px solid rgba(255,255,255,0.1);">
+            <p style="font-size:0.78rem;color:rgba(255,255,255,0.45);margin-bottom:14px;text-transform:uppercase;letter-spacing:1.5px;font-weight:600;" data-i18n="con.follow">Obserwuj nas</p>
+            <div class="social-links">
+              <div class="social-link" title="Facebook">f</div>
+              <div class="social-link" title="Instagram">in</div>
+              <div class="social-link" title="WhatsApp">w</div>
+              <div class="social-link" title="YouTube">▶</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: Form Card -->
+        <div class="form-card" id="formCard">
+          <h3 data-i18n="form.title">Wyślij zapytanie</h3>
+          <p data-i18n="form.desc">Wypełnij formularz poniżej, a nasz zespół odezwie się do Ciebie w ciągu 24 godzin.</p>
+
+          <form id="contactForm" onsubmit="submitForm(event)" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName" data-i18n="form.firstname.label">Imię *</label>
+                <input type="text" id="firstName" name="firstName" data-i18n-ph="form.firstname.ph" placeholder="np. Jan" required />
+              </div>
+              <div class="form-group">
+                <label for="lastName" data-i18n="form.lastname.label">Nazwisko *</label>
+                <input type="text" id="lastName" name="lastName" data-i18n-ph="form.lastname.ph" placeholder="np. Kowalski" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email" data-i18n="form.email.label">Adres e-mail *</label>
+                <input type="email" id="email" name="email" data-i18n-ph="form.email.ph" placeholder="jan@przykład.pl" required />
+              </div>
+              <div class="form-group">
+                <label for="phone" data-i18n="form.phone.label">Telefon / WhatsApp</label>
+                <input type="tel" id="phone" name="phone" data-i18n-ph="form.phone.ph" placeholder="+48 123 456 789" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="country" data-i18n="form.country.label">Kraj zamieszkania</label>
+                <select id="country" name="country">
+                  <option value="" data-i18n="form.country.default">— Wybierz kraj —</option>
+                  <option data-i18n="form.country.egypt">Egipt</option>
+                  <option data-i18n="form.country.poland">Polska</option>
+                  <option data-i18n="form.country.uk">Wielka Brytania</option>
+                  <option data-i18n="form.country.germany">Niemcy</option>
+                  <option data-i18n="form.country.russia">Rosja</option>
+                  <option data-i18n="form.country.ksa">Arabia Saudyjska</option>
+                  <option data-i18n="form.country.uae">ZEA</option>
+                  <option data-i18n="form.country.usa">USA</option>
+                  <option data-i18n="form.country.france">Francja</option>
+                  <option data-i18n="form.country.italy">Włochy</option>
+                  <option data-i18n="form.country.other">Inne</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="unitType" data-i18n="form.unit.label">Interesujący lokal *</label>
+                <select id="unitType" name="unitType" required>
+                  <option value="" data-i18n="form.unit.default">— Wybierz typ lokalu —</option>
+                  <option value="studio" data-i18n="form.unit.studio">Studio (od 54 900 $)</option>
+                  <option value="1bed" data-i18n="form.unit.1bed">1-pokojowy (od 89 500 $)</option>
+                  <option value="2bed" data-i18n="form.unit.2bed">Penthouse 2-pokojowy (od 149 000 $)</option>
+                  <option value="any" data-i18n="form.unit.any">Otwarty na wszystkie opcje</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="purpose" data-i18n="form.purpose.label">Cel zakupu</label>
+              <select id="purpose" name="purpose">
+                <option value="" data-i18n="form.purpose.default">— Wybierz cel —</option>
+                <option value="holiday" data-i18n="form.purpose.holiday">Wakacje / drugi dom</option>
+                <option value="investment" data-i18n="form.purpose.invest">Inwestycja / dochód z wynajmu</option>
+                <option value="permanent" data-i18n="form.purpose.permanent">Stałe zamieszkanie</option>
+                <option value="undecided" data-i18n="form.purpose.undecided">Jeszcze decyduję</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message" data-i18n="form.msg.label">Twoja wiadomość</label>
+              <textarea id="message" name="message" data-i18n-ph="form.msg.ph" placeholder="Napisz, czego szukasz, zadaj pytania dotyczące projektu lub umów wizytę na budowie..."></textarea>
+            </div>
+
+            <div class="form-group" style="display:flex;align-items:flex-start;gap:10px;margin-bottom:24px;">
+              <input type="checkbox" id="consent" name="consent" required style="width:auto;margin-top:3px;flex-shrink:0;" />
+              <label for="consent" style="font-size:0.8rem;font-weight:400;color:var(--gray);cursor:pointer;" data-i18n="form.consent">Wyrażam zgodę na kontakt ze strony zespołu sprzedaży Azure Sands w związku z niniejszym zapytaniem. Twoje dane nie zostaną udostępnione osobom trzecim.</label>
+            </div>
+
+            <button type="submit" class="form-submit" data-i18n="form.submit">Wyślij zapytanie →</button>
+          </form>
+
+          <!-- Success State -->
+          <div class="form-success" id="formSuccess">
+            <div class="icon">✅</div>
+            <h3 data-i18n="form.success.title">Dziękujemy!</h3>
+            <p style="color:var(--gray);margin-top:8px;" data-i18n="form.success.desc">Twoje zapytanie zostało odebrane. Członek naszego zespołu sprzedaży skontaktuje się z Tobą w ciągu 24 godzin.</p>
+            <a href="index.html" class="btn-primary" style="display:inline-flex;margin-top:28px;" data-i18n="form.success.btn">Powrót do strony głównej</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY INVEST STRIP -->
+  <section style="background:var(--primary-dark);padding:64px 48px;">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:48px;">
+        <div class="section-label" style="color:var(--secondary);" data-i18n="invest.label">Dlaczego inwestować w Marsa Alam?</div>
+        <h2 class="section-title" style="color:#fff;" data-i18n="invest.title">Wysokie zwroty na rosnącym rynku</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;">
+        <div style="text-align:center;color:#fff;">
+          <div style="font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:700;color:var(--secondary);">8–12%</div>
+          <div style="font-size:0.8rem;color:rgba(255,255,255,0.6);margin-top:6px;text-transform:uppercase;letter-spacing:1px;" data-i18n="invest.stat1">Roczna stopa zwrotu z wynajmu</div>
+        </div>
+        <div style="text-align:center;color:#fff;">
+          <div style="font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:700;color:var(--secondary);">300+</div>
+          <div style="font-size:0.8rem;color:rgba(255,255,255,0.6);margin-top:6px;text-transform:uppercase;letter-spacing:1px;" data-i18n="invest.stat2">Słonecznych dni rocznie</div>
+        </div>
+        <div style="text-align:center;color:#fff;">
+          <div style="font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:700;color:var(--secondary);">0%</div>
+          <div style="font-size:0.8rem;color:rgba(255,255,255,0.6);margin-top:6px;text-transform:uppercase;letter-spacing:1px;" data-i18n="invest.stat3">Podatek od nieruchomości dla obcokrajowców</div>
+        </div>
+        <div style="text-align:center;color:#fff;">
+          <div style="font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:700;color:var(--secondary);">5★</div>
+          <div style="font-size:0.8rem;color:rgba(255,255,255,0.6);margin-top:6px;text-transform:uppercase;letter-spacing:1px;" data-i18n="invest.stat4">Międzynarodowe lotnisko w pobliżu</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="brand">Azure Sands Residences</div>
+        <div class="tagline" data-i18n="footer.tagline">Marsa Alam · Egipt</div>
+        <p data-i18n="footer.desc">Ekskluzywna inwestycja mieszkaniowa na Riwierze Morza Czerwonego — gdzie nowoczesny luksus spotyka się z naturalnym pięknem.</p>
+        <div class="social-links">
+          <div class="social-link">f</div><div class="social-link">in</div>
+          <div class="social-link">w</div><div class="social-link">▶</div>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.col1">Szybkie linki</h4>
+        <ul>
+          <li><a href="index.html" data-i18n="nav.home">Strona główna</a></li>
+          <li><a href="units.html" data-i18n="nav.units">Lokale</a></li>
+          <li><a href="index.html#amenities" data-i18n="nav.amenities">Udogodnienia</a></li>
+          <li><a href="location.html" data-i18n="nav.location">Lokalizacja</a></li>
+          <li><a href="contact.html" data-i18n="footer.col3">Kontakt</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.col2">Lokale</h4>
+        <ul>
+          <li><a href="unit-studio.html" data-i18n="footer.studios">Studia</a></li>
+          <li><a href="unit-1bed.html" data-i18n="footer.1bed">1-pokojowe</a></li>
+          <li><a href="unit-2bed.html" data-i18n="footer.2bed">Penthouse'y 2-pokojowe</a></li>
+          <li><a href="units.html" data-i18n="footer.plans">Rzuty pięter</a></li>
+          <li><a href="contact.html" data-i18n="footer.payment">Plany płatności</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.col3">Kontakt</h4>
+        <div class="footer-contact-item"><span class="icon">📍</span><span>Marsa Alam, Gubernatorstwo Morza Czerwonego, Egipt</span></div>
+        <div class="footer-contact-item"><span class="icon">📞</span><span>+20 65 123 4567</span></div>
+        <div class="footer-contact-item"><span class="icon">✉️</span><span>info@azuresands.eg</span></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span data-i18n="footer.copyright">© 2026 Azure Sands Residences. Wszelkie prawa zastrzeżone.</span>
+      <span data-i18n="footer.disclaimer">Ceny mogą ulec zmianie. Obowiązują regulamin i warunki.</span>
+    </div>
+  </footer>
+
+  <script src="translations.js"></script>
+  <script>
+    function toggleMenu() {
+      const links = document.querySelector('.nav-links');
+      const isOpen = links.style.display === 'flex';
+      links.style.display = isOpen ? '' : 'flex';
+      if (!isOpen) {
+        links.style.flexDirection = 'column';
+        links.style.position = 'fixed';
+        links.style.top = '64px';
+        links.style.left = '0';
+        links.style.right = '0';
+        links.style.background = 'rgba(9,17,26,0.97)';
+        links.style.padding = '24px 24px 32px';
+        links.style.gap = '24px';
+        links.style.backdropFilter = 'blur(12px)';
+      }
+    }
+
+    function submitForm(e) {
+      e.preventDefault();
+      const form = document.getElementById('contactForm');
+      const success = document.getElementById('formSuccess');
+      const required = form.querySelectorAll('[required]');
+      let valid = true;
+      required.forEach(field => {
+        field.style.borderColor = '';
+        if (field.type === 'checkbox' && !field.checked) { field.style.outlineColor = 'red'; valid = false; }
+        else if (field.type !== 'checkbox' && !field.value.trim()) { field.style.borderColor = '#e05c2a'; valid = false; }
+      });
+      if (!valid) return;
+      form.style.display = 'none';
+      success.style.display = 'block';
+    }
+
+    document.querySelectorAll('.form-group input, .form-group select, .form-group textarea').forEach(el => {
+      el.addEventListener('focus', () => { el.closest('.form-group').querySelector('label').style.color = 'var(--primary)'; });
+      el.addEventListener('blur',  () => { el.closest('.form-group').querySelector('label').style.color = ''; });
+    });
+  </script>
+</body>
+</html>
