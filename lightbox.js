@@ -65,7 +65,7 @@
     .lb-next { right: 12px; }
     .lb-prev:hover, .lb-next:hover { opacity: 1; }
 
-    /* Make clickable wrappers show zoom cursor */
+    /* Clickable wrappers */
     .gallery-item,
     .unit-img,
     .apt-img-wrap,
@@ -93,17 +93,19 @@
   const prevBtn = overlay.querySelector('.lb-prev');
   const nextBtn = overlay.querySelector('.lb-next');
 
-  let images = [];
+  // Active group state
+  let activeGroup = [];
   let current = 0;
 
-  function open(idx) {
+  function open(group, idx) {
+    activeGroup = group;
     current = idx;
-    lbImg.src = images[current].src;
-    lbImg.alt = images[current].alt;
+    lbImg.src = activeGroup[current].src;
+    lbImg.alt = activeGroup[current].alt;
     overlay.classList.add('active');
     document.body.style.overflow = 'hidden';
-    prevBtn.style.display = images.length > 1 ? '' : 'none';
-    nextBtn.style.display = images.length > 1 ? '' : 'none';
+    prevBtn.style.display = activeGroup.length > 1 ? '' : 'none';
+    nextBtn.style.display = activeGroup.length > 1 ? '' : 'none';
   }
 
   function close() {
@@ -112,8 +114,8 @@
     lbImg.src = '';
   }
 
-  function prev() { open((current - 1 + images.length) % images.length); }
-  function next() { open((current + 1) % images.length); }
+  function prev() { open(activeGroup, (current - 1 + activeGroup.length) % activeGroup.length); }
+  function next() { open(activeGroup, (current + 1) % activeGroup.length); }
 
   closeBtn.addEventListener('click', close);
   prevBtn.addEventListener('click', e => { e.stopPropagation(); prev(); });
@@ -127,37 +129,38 @@
     if (e.key === 'ArrowRight') next();
   });
 
-  function init() {
-    // Selectors: we target the WRAPPER, then find the img inside it
-    const wrapperSelectors = [
-      '.gallery-item',
-      '.apt-img-wrap',
-      '.gallery-main',
-      '.gallery-thumb',
-      '.unit-img'
-    ];
-
-    const wrappers = Array.from(
-      document.querySelectorAll(wrapperSelectors.join(','))
-    ).filter(el => el.querySelector('img'));
-
-    // Build image list from found wrappers
-    images = wrappers.map(wrap => {
+  function buildGroup(wrappers) {
+    return wrappers.map(wrap => {
       const img = wrap.querySelector('img');
       return {
         src: img.src.replace(/w=\d+/, 'w=1600'),
         alt: img.alt
       };
     });
+  }
 
-    // Attach click to each wrapper
+  function attachGroup(selector) {
+    const wrappers = Array.from(document.querySelectorAll(selector))
+      .filter(el => el.querySelector('img'));
+    if (!wrappers.length) return;
+
+    const group = buildGroup(wrappers);
+
     wrappers.forEach((wrap, idx) => {
       wrap.addEventListener('click', e => {
         e.preventDefault();
         e.stopPropagation();
-        open(idx);
+        open(group, idx);
       });
     });
+  }
+
+  function init() {
+    // Each selector is its own independent photo group
+    attachGroup('.gallery-item');       // index.html — photo gallery section
+    attachGroup('.unit-img');           // units.html — unit listing photos
+    attachGroup('.apt-img-wrap');       // index.html — apartment cards
+    attachGroup('.gallery-main, .gallery-thumb'); // unit detail pages — combined as one set
   }
 
   if (document.readyState === 'loading') {
